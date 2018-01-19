@@ -10,12 +10,13 @@
                 ?>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Deployment Plan</label>
-                    <select class="form-control" name="dep_plan_id" required>
+                    <select class="form-control" name="dep_plan_id" disabled="" required>
                     <?php 
                         foreach($patrol_teams as $patrol_team){
+                            if($_GET['uid'] == $patrol_team['id']) {
                     ?>
                         <option  value="<?php echo $patrol_team['id']; ?>"> <?php echo strtoupper($patrol_team['schedule_for_date']); ?> </option>
-                    <?php } ?>
+                    <?php } }?>
                     </select>
                 </div>
                 <?php 

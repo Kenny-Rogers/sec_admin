@@ -1,9 +1,9 @@
 <?php include('../includes/api.php'); ?>
 <div class="row">
-    <div class='col-md-offset-10 col-md-2'>
-      <a style="color:white" href="?page=create_user">
+    <div class='col-md-offset-9 col-md-3'>
+      <a style="color:white" href="?page=create_dep_plan">
         <button type="submit" class="btn btn-info btn-fill btn-wd" >
-            Create New User
+            Create New Deployment Plan
         </button>
        </a>
     </div>
@@ -26,7 +26,7 @@
                                         <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 181.7px;" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">#</th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 231.25px;" aria-label="Browser: activate to sort column ascending">Secretariat</th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 196.717px;" aria-label="Platform(s): activate to sort column ascending">Scheduled For</th>
-                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 156.183px;" aria-label="Engine version: activate to sort column ascending">Portfolio</th>
+                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 156.183px;" aria-label="Engine version: activate to sort column ascending">Number Of Teams</th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 112.15px;" aria-label="CSS grade: activate to sort column ascending">Operations</th>
                                     </tr>
                                 </thead>
@@ -45,6 +45,7 @@
                     <td><?php echo strtoupper($date); ?></td>
                     <td><?php //echo strtoupper($system_user['system_user']['role']); ?></td>
                     <td>
+                        <a title="Add Patrol Team" href="?page=enroll_team&uid=<?php echo $dep_plan['id'];?>"><i class="fa fa-users"></i></a> &ensp;&ensp;&ensp;&ensp;
                         <a title="Edit Record" href="?page=edit_user&uid=<?php echo $system_user['system_user']['id'];?>"><i class="fa fa-edit"></i></a> &ensp;&ensp;&ensp;&ensp;
                         <a title="Delete Record" href="?page=delete_user&uid=<?php echo $system_user['system_user']['id'];?>"><i class="fa fa-trash-o"></i></a> 
                     </td>

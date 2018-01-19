@@ -1,7 +1,7 @@
 <?php include('../includes/api.php');?>
 <div class="row">
-    <div class='col-md-offset-10 col-md-2'>
-      <a style="color:white" href="?page=create_user">
+    <div class='col-md-offset-9 col-md-3'>
+      <a style="color:white" href="?page=create_sec">
         <button type="submit" class="btn btn-info btn-fill btn-wd" >
             Create New Secretariat
         </button>
