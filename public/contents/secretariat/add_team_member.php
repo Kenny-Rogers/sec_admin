@@ -1,4 +1,5 @@
 <?php include('../includes/api.php');?>
+<?php $team_id = $_GET['team_id']; ?>
 
 <div class="row">
     <div class="col-xs-offset-1 col-xs-10">
@@ -10,12 +11,13 @@
                 ?>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Patrol Team </label>
-                    <select class="form-control" name="patrol_team_id" required>
+                    <select class="form-control" name="patrol_team_id" disabled="" required>
                     <?php 
                         foreach($patrol_teams as $patrol_team){
+                            if ( $team_id == $patrol_team['id']){
                     ?>
-                        <option  value="<?php echo $patrol_team['id']; ?>"> <?php echo strtoupper($patrol_team['team_name']); ?> </option>
-                    <?php } ?>
+                        <option selected="true" value="<?php echo $patrol_team['id']; ?>"> <?php echo strtoupper($patrol_team['team_name']); ?> </option>
+                    <?php } } ?>
                     </select>
                 </div>
                 <?php 
