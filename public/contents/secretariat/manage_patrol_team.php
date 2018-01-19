@@ -1,9 +1,9 @@
 <?php include('../includes/api.php');?>
 <div class="row">
-    <div class='col-md-offset-10 col-md-2'>
-      <a style="color:white" href="?page=create_user">
+    <div class='col-md-offset-9 col-md-3'>
+      <a style="color:white" href="?page=create_patrol_team">
         <button type="submit" class="btn btn-info btn-fill btn-wd" >
-            Create New User
+            Create New Patrol Team
         </button>
        </a>
     </div>
@@ -45,6 +45,7 @@
                     <td><?php echo strtoupper($system_user['expiration']); ?></td>
                     <td><?php echo strtoupper($full_name); ?></td>
                     <td>
+                        <a title="Add Patrol Team Member" href="?page=assign_patrol_team&team_id=<?php echo $system_user['id'];?>"><i class="fa fa-user-plus"></i></a> &ensp;&ensp;&ensp;&ensp;
                         <a title="Edit Record" href="?page=edit_user&uid=<?php echo $system_user['system_user']['id'];?>"><i class="fa fa-edit"></i></a> &ensp;&ensp;&ensp;&ensp;
                         <a title="Delete Record" href="?page=delete_user&uid=<?php echo $system_user['system_user']['id'];?>"><i class="fa fa-trash-o"></i></a> 
                     </td>
