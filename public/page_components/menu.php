@@ -32,6 +32,8 @@
         <li><a href="?page=assign_patrol_team"><i class="fa fa-link"></i> <span>Assign Patrol Team</span></a></li>
         <li><a href="?page=enroll_team"><i class="fa fa-link"></i> <span>Enroll Patrol Team</span></a></li-->
         <li><a href="?page=manage_patrol_team"><i class="fa fa-link"></i> <span>Manage Patrol Team</span></a></li>
+        <li><a href="?page=map_view"><i class="fa fa-link"></i> <span>View Patrol Teams</span></a></li>
+        <li><a href="?page=make_ann"><i class="fa fa-link"></i> <span>Make Announcement</span></a></li>
         <li><a href="?page=log_out"><i class="fa fa-link"></i> <span>Logout</span></a></li>
       </ul>
       <!-- /.sidebar-menu -->

@@ -99,6 +99,17 @@
         $main_content = 'contents/dispatcher/contact.php';
       break;
 
+      case 'map_view':
+        $title = "View Patrol Teams Locations";
+        $main_content = 'contents/dispatcher/map_view.php';
+      break;
+
+      case 'make_ann':
+        $title = "View Patrol Teams Locations";
+        $main_content = 'contents/secretariat/make_ann.php';
+      break;
+
+
       default :
         $title = "Dashboard";
         $main_content =  'contents/main_content/basic.php';
