@@ -15,11 +15,8 @@
 
 </div>
 <!-- ./wrapper -->
-
 <!-- REQUIRED JS SCRIPTS -->
 
-<!-- jQuery 3 -->
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- DataTables -->
@@ -35,8 +32,7 @@
 <script src="dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
-<!-- Custom js-->
-<script src="bower_components/functions.js"></script>
+
 <!-- page script -->
 <script>
   $(function () {
@@ -54,6 +50,8 @@
   $('#datepicker').datepicker({
     autoclose: true
   })
+
+  
 </script>
 </body>
 </html>
