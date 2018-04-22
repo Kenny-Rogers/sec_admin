@@ -36,6 +36,9 @@ class API {
   private static $DEPLOYMENT_PLAN_LIST_URL = "public/get_users_list.php?user_type=dep_plan";
   private static $DEPLOYMENT_PLAN_ENLIST_URL = "public/register_user.php?user_type=enroll_team";
 
+  /* COMPLAINT */
+  private static $COMPLAINT_LIST_URL = "public/get_users_list.php?user_type=complaint";
+
   //$url is the api url to post the data to
   //$data is the information to be sent to API
   //returns the results from the operation
@@ -184,6 +187,10 @@ class API {
         $url .= self::$DEPLOYMENT_PLAN_ENLIST_URL;
         break;
       
+      case 'get_complaint':
+        $url .= self::$COMPLAINT_LIST_URL;
+        break;
+
       default:
         $url = "";
         break;

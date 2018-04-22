@@ -61,7 +61,7 @@
 
 </script>
 <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkhzSPBGRblofnQZ2YtMmC5Lh2TTkAjuk&callback=get_api_data">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwpjbPox3yumBn7T5xfSAunYlkk8vk63k&callback=get_api_data">
 </script>
 <div class="row">
     <div class="col-sm-offset-2 col-sm-8">

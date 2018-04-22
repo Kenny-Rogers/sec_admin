@@ -1,8 +1,15 @@
+<style>
+  #map {
+          height: 500px;
+          width: 100%;
+          background-color: grey;
+        }
+</style>
 <?php include('../includes/api.php');?>
 <div class="row">
     <div class="col-xs-offset-1 col-xs-10">
         <div class="box box-primary">
-            <form role="form" method="post" action="../includes/actions/submit_data.php?page=<?php echo $page; ?>">
+            <form role="form" method="post" action="../includes/actions/submit_data.php?page=<?php echo $page; ?>" >
                 <div class="box-body">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Name Of Police Station</label>
@@ -43,6 +50,12 @@
                     <?php } ?>
                     </select>
                 </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Location</label>
+                    <div id="map"></div>
+                </div>
+                <input type="text" id="lat" name="lat"  hidden/>
+                <input type="text" id="lng" name="lng" hidden/>
                 <div class="box-footer">
                     <div class="row">
                     <div class="col-xs-offset-8 col-xs-4">
@@ -55,3 +68,9 @@
         </div>
     </div>
 </div>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwpjbPox3yumBn7T5xfSAunYlkk8vk63k&callback=initialize">
+</script>
+<!--script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkhzSPBGRblofnQZ2YtMmC5Lh2TTkAjuk&callback=initialize">
+</script-->

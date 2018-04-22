@@ -1,0 +1,7 @@
+.notif {
+   position: absolute;
+   right:0;
+   margin:5px;
+   width:20%;
+   z-index: 99;
+}

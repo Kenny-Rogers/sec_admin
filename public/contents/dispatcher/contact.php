@@ -1,3 +1,7 @@
+<div class="notif">
+    <div id="data_returned" ></div>
+</div>
+
 <div class="row">
     <div class="col-md-6">
         <!-- DIRECT CHAT WARNING -->

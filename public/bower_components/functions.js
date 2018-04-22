@@ -108,3 +108,23 @@ function initMap(map_data) {
     }
     
 }
+
+
+function initialize(){
+    var options = {
+        zoom: 12,
+        center: { lat: 5.6161473, lng: - 0.1879726}
+    }
+
+    var map = new google.maps.Map(document.getElementById('map'), options);
+
+    google.maps.event.addListener(map, 'click', function (event) {
+        marker = new google.maps.Marker({
+            position: event.latLng,
+            map: map
+        });
+        
+        document.getElementById("lat").value = event.latLng.lat();
+        document.getElementById("lng").value = event.latLng.lng();
+    });
+}
