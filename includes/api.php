@@ -38,6 +38,14 @@ class API {
 
   /* COMPLAINT */
   private static $COMPLAINT_LIST_URL = "public/get_users_list.php?user_type=complaint";
+  private static $COMPLAINANT_LIST_URL = "public/get_users_list.php?user_type=complainant";
+
+  /* COMPLAINT_ACTION */
+  private static $COMPLAINT_ACTION_REGISTRATION_URL = "public/register_user.php?user_type=complain_action";
+
+  /* COMPLAINT MEDIA */
+  private static $COMPLAINT_MEDIA_LIST_URL = "public/get_users_list.php?user_type=complaint_media";
+  private static $COMPLAINT_MEDIA_URL = "public/complaint_media/";
 
   //$url is the api url to post the data to
   //$data is the information to be sent to API
@@ -167,6 +175,7 @@ class API {
       case 'list_patrol_team':
         $url .= self::$PATROL_TEAM_LIST_URL;
         break;
+        
       case 'personnel_info':
         $url .= self::$PERSONNEL_INFO_URL;
         break;
@@ -189,6 +198,22 @@ class API {
       
       case 'get_complaint':
         $url .= self::$COMPLAINT_LIST_URL;
+        break;
+
+      case 'get_complainant':
+        $url .= self::$COMPLAINANT_LIST_URL;
+        break;
+
+      case 'answer_complaint':
+        $url .= self::$COMPLAINT_ACTION_REGISTRATION_URL;
+        break;
+
+      case 'get_media':
+        $url .= self::$COMPLAINT_MEDIA_LIST_URL;
+        break;
+
+      case 'get_media_file':
+        $url .= self::$COMPLAINT_MEDIA_URL;
         break;
 
       default:

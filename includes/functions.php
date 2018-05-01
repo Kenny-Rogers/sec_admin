@@ -59,7 +59,7 @@
 
     function datetime_to_text($datetime=""){
     //displays the date in a different format
-    $unixdatetime = strtotime($datatime);
+    $unixdatetime = strtotime($datetime);
     return Strftime("%B %d, %Y at %I:%M %p", $unixdatetime);
     }
 
@@ -73,5 +73,28 @@
     function mysql_date_format($dt=""){
     $mysql_date=strftime("%Y-%m-%d", $dt);
     return  $mysql_date;
+    }
+
+
+    function output_message($message = "", $class = "", $message_return = ''){
+        //displays a paragraphed text
+        if (!empty($message) && $class == "success") {
+            $message_display = "<div class='row'><div class='col-sm-offset-1 col-sm-10 alert alert-success alert-dismissable'>" .
+                "<a href=''#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>{$message}</div></div>";
+        } elseif (!empty($message) && $class == "fail") {
+            $message_display = "<div class='row'><div class='col-sm-offset-1 col-sm-10 alert alert-danger alert-dismissable'>" .
+                "<a href=''#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>{$message}</div></div>";
+        } elseif (!empty($message) && $class == "info") {
+            $message_display = "<div class='row'><div class='col-sm-offset-1 col-sm-10 alert alert-info alert-dismissable'>" .
+                "<a href=''#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>{$message}</div></div>";
+        } else {
+            $message_display = "";
+        }
+
+        if ($message_return == 'r') {
+            return $message_display;
+        } else {
+            echo $message_display;
+        }
     }
 ?>

@@ -10,7 +10,8 @@
 
    //decoding the results into an array
    $output = json_decode($results, true);
-//    print_r($results);
+   //echo API::get_api_url($page);
+  // print_r($results);
 
    //redirecting based on the success of the operation
     if($output['status'] == 1){
