@@ -6,7 +6,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" enctype="multipart/form-data" method="post" action="http://127.0.0.1/final_proj_api/public/make_announcement.php">
+            <form role="form" enctype="multipart/form-data" method="post" action="http://localhost/final_proj_api/public/make_announcement.php">
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Title</label>

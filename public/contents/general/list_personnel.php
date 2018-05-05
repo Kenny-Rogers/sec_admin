@@ -88,10 +88,10 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Register Person</h4>
+                <h4 class="modal-title">Register Personnel</h4>
             </div>
             <div class="modal-body">
-                <form role="form" method="post" action="../includes/actions/submit_data.php?page=<?php echo $page; ?>">
+                <form role="form" method="post" action="../includes/actions/submit_data.php?page=reg_personnel&rpage=<?php echo $page ?>">
                     <div class="box-body">
                         <div class="form-group">
                             <label for="exampleInputEmail1">First Name</label>

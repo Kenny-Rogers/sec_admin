@@ -53,3 +53,11 @@
 
     <!-- Main content -->
     <section class="content container-fluid">
+    <?php 
+        $status=isset($_GET["status"])?$_GET["status"]:"";
+        if($status == "success"){
+            output_message("Operation Successful", "success");
+        }elseif($status == ""){} else{
+          output_message("Operation failed", "fail");
+        }
+    ?>

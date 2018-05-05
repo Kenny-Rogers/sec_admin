@@ -2,7 +2,7 @@
 
 class API {
   //web protocol address
-  private static $PROTOCOL = "http://127.0.0.1/final_proj_api/";
+  private static $PROTOCOL = "http://localhost/final_proj_api/";//"http://127.0.0.1/final_proj_api/";
 
   //URL CONSTANTS
   /* PERSONNEL */

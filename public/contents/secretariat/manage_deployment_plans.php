@@ -87,14 +87,13 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Register Person</h4>
+                <h4 class="modal-title">Create Deployment Plan</h4>
             </div>
             <div class="modal-body">
-            <form role="form" method="post" action="../includes/actions/submit_data.php?page=<?php echo $page; ?>">
+            <form role="form" method="post" action="../includes/actions/submit_data.php?page=create_dep_plan&rpage=<?php echo $page; ?>">
                 <div class="box-body">
                 <?php 
-                     $secretariats = API::get_data(API::get_api_url('man_sec'));
-                     
+                     $secretariats = API::get_data(API::get_api_url('man_sec'));    
                 ?>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Secretariat </label>

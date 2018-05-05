@@ -6,7 +6,7 @@
             </div-->
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" method="post" action="../includes/actions/submit_data.php?page=<?php echo $page; ?>">
+            <form role="form" method="post" action="../includes/actions/submit_data.php?page=reg_personnel&rpage=<?php echo $page ?>">
                 <div class="box-body">
                 <div class="form-group">
                     <label for="exampleInputEmail1">First Name</label>

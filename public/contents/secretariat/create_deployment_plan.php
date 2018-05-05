@@ -7,7 +7,6 @@
                 <div class="box-body">
                 <?php 
                      $secretariats = API::get_data(API::get_api_url('man_sec'));
-                     
                 ?>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Secretariat </label>
