@@ -55,13 +55,15 @@
                                                 <?php echo strtoupper($secretariat[0]['name']) ?>
                                             </td>
                                             <td>
-                                                <a title="Edit Record" href="?page=edit_user&uid=<?php echo $system_user['system_user']['id']; ?>">
+                                                <!-- <a title="Edit Record" href="?page=edit_user&uid=<?php //echo $personnel['id']; ?>"> -->
+                                                    
+                                                <a title="Edit Record" data-toggle ="modal" data-id="<?php echo $personnel['id']; ?>" href="#edit_user_modal" class="editModal">
                                                     <i class="fa fa-edit"></i>
                                                 </a> &ensp;&ensp;&ensp;&ensp;
-                                                <a title="View Record" href="?page=edit_user&uid=<?php echo $system_user['system_user']['id']; ?>">
+                                                <!-- <a title="View Record" href="?page=edit_user&uid=<?php echo $system_user['system_user']['id']; ?>">
                                                     <i class="fa fa-info-circle"></i>
-                                                </a>&ensp;&ensp;&ensp;&ensp;
-                                                <a title="Delete Record" href="?page=delete_user&uid=<?php echo $system_user['system_user']['id']; ?>">
+                                                </a>&ensp;&ensp;&ensp;&ensp; -->
+                                                <a title="Delete Record" data-toggle ="modal" data-id="<?php echo $personnel['id']; ?>" href="#delete_user_modal" class="deleteModal">
                                                     <i class="fa fa-trash-o"></i>
                                                 </a>
                                             </td>
@@ -79,6 +81,36 @@
     </div>
     <!-- /.col -->
 </div>
+
+
+<!--Delete Modal -->
+<div class="modal fade" id="delete_user_modal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Delete Personnel Information</h4>
+            </div>
+            <div class="modal-body">
+              <form role="form" method="post" action="../includes/actions/submit_data.php?page=delete_personnel&rpage=list_personnel" >
+                <div class="box-body">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Are you sure you want to delete this information?</label>
+                        <input type="hidden" name="id" id="infoid" value="">
+                   </div>
+                   </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-danger">Delete Personnel Information</button>
+                </div>
+              </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <!--Register Modal -->
 <div class="modal fade" id="registerModal" role="dialog">
@@ -149,3 +181,24 @@
             </div>
         </div>
     </div>
+</div>
+
+
+
+<!--Edit Modal -->
+<div class="modal fade" id="edit_user_modal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Edit Personnel Information</h4>
+            </div>
+            <div class="modal-body">
+              <div id="loadForm"></div>
+            </div>
+        </div>
+    </div>
+</div>
+

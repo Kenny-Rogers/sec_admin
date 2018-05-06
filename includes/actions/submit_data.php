@@ -14,7 +14,7 @@
    //decoding the results into an array
    $output = json_decode($results, true);
 
-   //print_r($results);
+//    print_r($results);
    //redirecting based on the success of the operation
     if($output['status'] == 1){
         header('location:../../public/index.php?page='.$rpage.'&status=success');

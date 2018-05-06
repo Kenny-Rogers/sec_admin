@@ -9,7 +9,9 @@ class API {
   private static $PERSONNEL_REGISTRATION_URL = "public/register_user.php?user_type=personnel";
   private static $PERSONNEL_LIST_URL = "public/get_users_list.php?user_type=personnel";
   private static $PERSONNEL_DELETE_URL = "public/delete_user.php?user_type=personnel";
+  private static $PERSONNEL_DELETE_URL1 = "public/delete_data.php?user_type=personnel";
   private static $PERSONNEL_EDIT_URL = "public/edit_user.php?user_type=personnel";
+  private static $PERSONNEL_EDIT_URL1 = "public/update_data.php?user_type=personnel";
   private static $PERSONNEL_INFO_URL = "public/get_user.php?user_type=personnel";
 
   /* SYSTEM USER */
@@ -132,6 +134,14 @@ class API {
 
       case 'list_personnel':
         $url .= self::$PERSONNEL_LIST_URL;
+        break;
+
+      case 'edit_personnel':
+        $url .= self::$PERSONNEL_EDIT_URL1;
+        break;
+
+      case 'delete_personnel':
+        $url .= self::$PERSONNEL_DELETE_URL1;
         break;
 
       case 'create_sec':
