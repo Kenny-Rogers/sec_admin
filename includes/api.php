@@ -37,6 +37,9 @@ class API {
   private static $DEPLOYMENT_PLAN_REG_URL = "public/register_user.php?user_type=dep_plan";
   private static $DEPLOYMENT_PLAN_LIST_URL = "public/get_users_list.php?user_type=dep_plan";
   private static $DEPLOYMENT_PLAN_ENLIST_URL = "public/register_user.php?user_type=enroll_team";
+  private static $DEPLOYMENT_PLAN_INFO_URL = "public/get_user.php?user_type=dep_plan";
+  private static $DEPLOYMENT_PLAN_EDIT_URL = "public/update_data.php?user_type=dep_plan";
+  private static $DEPLOYMENT_PLAN_DELETE_URL = "public/delete_data.php?user_type=dep_plan";
 
   /* COMPLAINT */
   private static $COMPLAINT_LIST_URL = "public/get_users_list.php?user_type=complaint";
@@ -206,6 +209,18 @@ class API {
         $url .= self::$DEPLOYMENT_PLAN_ENLIST_URL;
         break;
       
+      case 'dep_plan_info':
+        $url .= self::$DEPLOYMENT_PLAN_INFO_URL;
+        break;
+
+      case 'edit_dep_plan':
+        $url .= self::$DEPLOYMENT_PLAN_EDIT_URL;
+        break;
+
+      case 'delete_dep_plan':
+        $url .= self::$DEPLOYMENT_PLAN_DELETE_URL;
+        break;
+
       case 'get_complaint':
         $url .= self::$COMPLAINT_LIST_URL;
         break;

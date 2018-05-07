@@ -5,6 +5,8 @@
    //getting the calling page
    $page = $_GET['page'];
 
+  // print_r($_POST);
+
    //getting the return page
    $rpage = isset($_GET['rpage']) ? $_GET['rpage'] : $page;
 

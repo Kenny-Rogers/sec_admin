@@ -1,4 +1,4 @@
-<?php include('../includes/api.php');?>
+<?php include('../includes/api.php'); ?>
 <div class="row">
     <div class='col-md-offset-10 col-md-2'>
       <!-- <a style="color:white" href="?page=create_user"> -->

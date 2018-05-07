@@ -36,6 +36,7 @@
                  $dep_plans = API::get_data(API::get_api_url($page));
 
 
+            
                  foreach($dep_plans as $dep_plan){
                      $sec = API::get_data(API::get_api_url('sec_info')."&uid=".$dep_plan['secretariat_id']);
                      $date =  get_displayable_date($dep_plan['schedule_for_date']);
@@ -51,16 +52,16 @@
                                             <?php echo strtoupper($date); ?>
                                         </td>
                                         <td>
-                                            <?php //echo strtoupper($system_user['system_user']['role']); ?>
+                                            <?php echo $dep_plan["count"]; ?>
                                         </td>
                                         <td>
-                                            <a title="Add Patrol Team" href="?page=enroll_team&uid=<?php echo $dep_plan['id'];?>">
+                                            <a title="Add Patrol Team" data-id="<?php echo $dep_plan['id']; ?>" data-toggle="modal" href="#enrollModal" class="enroll">
                                                 <i class="fa fa-users"></i>
                                             </a> &ensp;&ensp;&ensp;&ensp;
-                                            <a title="Edit Record" href="?page=edit_user&uid=<?php echo $system_user['system_user']['id'];?>">
+                                            <a title="Edit Record" data-id="<?php echo $dep_plan['id']; ?>" data-toggle="modal" href="#editDepModal" class="edit_dep">
                                                 <i class="fa fa-edit"></i>
                                             </a> &ensp;&ensp;&ensp;&ensp;
-                                            <a title="Delete Record" href="?page=delete_user&uid=<?php echo $system_user['system_user']['id'];?>">
+                                            <a title="Delete Record" data-id="<?php echo $dep_plan['id']; ?>" data-toggle="modal" href="#delete_user_modal" class="deleteModal">
                                                 <i class="fa fa-trash-o"></i>
                                             </a>
                                         </td>
@@ -77,6 +78,68 @@
         <!-- /.box -->
     </div>
     <!-- /.col -->
+</div>
+
+<!--Delete Modal -->
+<div class="modal fade" id="delete_user_modal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Delete Deployment Plan</h4>
+            </div>
+            <div class="modal-body">
+              <form role="form" method="post" action="../includes/actions/submit_data.php?page=delete_dep_plan&rpage=view_dep_plan" >
+                <div class="box-body">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Are you sure you want to delete this information?</label>
+                        <input type="hidden" name="id" id="infoid" value="">
+                   </div>
+                   </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-danger">Delete Deployment Information</button>
+                </div>
+              </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Enrol Team on Deployment Plan Modal -->
+<div class="modal fade" id="enrollModal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Enroll Patrol Team Unto Deployment Plan</h4>
+            </div>
+            <div class="modal-body">
+            <div id="enrollForm"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Edit Deployment Plan Modal -->
+<div class="modal fade" id="editDepModal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Enroll Patrol Team Unto Deployment Plan</h4>
+            </div>
+            <div class="modal-body">
+            <div id="enroll_dep_Form"></div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!--Register Modal -->
@@ -123,3 +186,4 @@
             </div>
         </div>
     </div>
+</div>
