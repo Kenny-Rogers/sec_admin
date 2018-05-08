@@ -25,6 +25,7 @@ class API {
   private static $SECRETARIAT_LIST_URL = "public/get_users_list.php?user_type=secretariat";
   private static $SECRETARIAT_INFO_URL = "public/get_user.php?user_type=secretariat";
   private static $SECRETARIAT_REP_LIST_URL = "public/get_users_list.php?user_type=sec_rep";
+  private static $SECRETARIAT_DELETE_URL = "public/delete_data.php?user_type=secretariat";
 
   /*PATROL TEAM */
   private static $NON_LEADER_LIST_URL = "public/get_users_list.php?user_type=non_leader_personnel";
@@ -153,6 +154,10 @@ class API {
       
       case 'man_sec':
         $url .= self::$SECRETARIAT_LIST_URL;
+        break;
+
+      case 'delete_sec':
+        $url .= self::$SECRETARIAT_DELETE_URL;
         break;
 
       case 'sec_info':
