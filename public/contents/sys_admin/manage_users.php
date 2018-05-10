@@ -47,8 +47,8 @@
                     <td><?php echo strtoupper($user['rank']); ?></td>
                     <td><?php echo strtoupper($system_user['system_user']['role']); ?></td>
                     <td>
-                        <a title="Edit Record" href="?page=edit_user&uid=<?php echo $system_user['system_user']['id'];?>"><i class="fa fa-edit"></i></a> &ensp;&ensp;&ensp;&ensp;
-                        <a title="Delete Record" href="?page=delete_user&uid=<?php echo $system_user['system_user']['id'];?>"><i class="fa fa-trash-o"></i></a> 
+                        <a title="Edit Record" data-id="<?php echo $system_user['system_user']['id'];?>" data-toggle="modal" href="#edit_user_modal" class="editModal1"><i class="fa fa-edit"></i></a> &ensp;&ensp;&ensp;&ensp;
+                        <a title="Delete Record" data-id="<?php echo $system_user['system_user']['id'];?>" data-toggle="modal" href="#delete_user_modal" class="deleteModal"><i class="fa fa-trash-o"></i></a> 
                     </td>
                 </tr>
             <?php } ?>
@@ -63,6 +63,52 @@
     <!-- /.box -->
 </div>
 <!-- /.col -->
+</div>
+
+
+<!--Delete Modal -->
+<div class="modal fade" id="delete_user_modal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Delete System User Information</h4>
+            </div>
+            <div class="modal-body">
+              <form role="form" method="post" action="../includes/actions/submit_data.php?page=delete_user&rpage=<?php echo $page; ?>" >
+                <div class="box-body">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Are you sure you want to delete this information?</label>
+                        <input type="hidden" name="id" id="infoid" value="">
+                   </div>
+                   </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-danger">Delete Sytem User Information</button>
+                </div>
+              </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Edit User Modal -->
+<div class="modal fade" id="edit_user_modal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Edit Secretariat</h4>
+            </div>
+            <div class="modal-body">
+            <div id="edit_user_Form"></div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!--Register Modal -->

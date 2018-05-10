@@ -17,8 +17,10 @@ class API {
   /* SYSTEM USER */
   private static $USERS_LIST_URL = "public/get_users_list.php?user_type=system_user";
   private static $USER_INFO_URL = "public/get_user.php?user_type=personnel";
+  private static $USER_INFO_URL1 = "public/get_user.php?user_type=system_user";
   private static $NON_USER_LIST_URL = "public/get_users_list.php?user_type=non_user_personnel";
   private static $USER_REGISTRATION_URL = "public/register_user.php?user_type=system_user";
+  private static $USER_DELETE_URL = "public/delete_data.php?user_type=user";
 
   /* SECRETARIAT  */
   private static $SECRETARIAT_REGISTRATION_URL = "public/register_user.php?user_type=secretariat";
@@ -26,6 +28,7 @@ class API {
   private static $SECRETARIAT_INFO_URL = "public/get_user.php?user_type=secretariat";
   private static $SECRETARIAT_REP_LIST_URL = "public/get_users_list.php?user_type=sec_rep";
   private static $SECRETARIAT_DELETE_URL = "public/delete_data.php?user_type=secretariat";
+  private static $SECRETARIAT_EDIT_URL = "public/update_data.php?user_type=secretariat";
 
   /*PATROL TEAM */
   private static $NON_LEADER_LIST_URL = "public/get_users_list.php?user_type=non_leader_personnel";
@@ -112,8 +115,16 @@ class API {
 
     //the path to exact file
     switch ($page) {
+      case 'delete_user':
+        $url .= self::$USER_DELETE_URL;
+        break;
+
       case 'edit_user':
         $url .= self::$PERSONNEL_EDIT_URL;
+        break;
+
+      case 'user_info1':
+        $url .= self::$USER_INFO_URL1;
         break;
 
       case 'create_user':
@@ -162,6 +173,10 @@ class API {
 
       case 'sec_info':
         $url .= self::$SECRETARIAT_INFO_URL;
+        break;
+
+      case 'edit_sec':
+        $url .= self::$SECRETARIAT_EDIT_URL;
         break;
 
       case 'list_non_user_personnel':

@@ -43,7 +43,9 @@
                     <td><?php echo strtoupper(get_type($secretariat['type'])); ?></td>
                     <td><?php echo strtoupper(get_region(trim($secretariat['region']))); ?></td>
                     <td>
-                        <a title="Edit Record" href="?page=edit_user&uid=<?php echo $secretariat['id'];?>"><i class="fa fa-edit"></i></a> &ensp;&ensp;&ensp;&ensp;
+                        <a title="Edit Record" data-id="<?php echo $secretariat['id'];?>" data-toggle="modal" href="#editSecModal" class="edit_sec_modal">
+                        <i class="fa fa-edit"></i>
+                        </a> &ensp;&ensp;&ensp;&ensp;
                         <a title="Delete Record" data-id="<?php echo $secretariat['id'];?>" data-toggle="modal" href="#delete_user_modal" class="deleteModal">
                         <i class="fa fa-trash-o"></i></a> 
                     </td>
@@ -85,6 +87,23 @@
                     <button type="submit" class="btn btn-danger">Delete Secretariat Information</button>
                 </div>
               </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Edit Secretariat Modal -->
+<div class="modal fade" id="editSecModal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Edit Secretariat</h4>
+            </div>
+            <div class="modal-body">
+            <div id="edit_sec_Form"></div>
             </div>
         </div>
     </div>
