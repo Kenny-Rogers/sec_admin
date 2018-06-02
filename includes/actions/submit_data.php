@@ -10,6 +10,7 @@
    //getting the return page
    $rpage = isset($_GET['rpage']) ? $_GET['rpage'] : $page;
 
+//    print_r($_POST);
    //performing API call
    $results = API::post_data(API::get_api_url($page), $_POST);
 

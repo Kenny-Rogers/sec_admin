@@ -1,4 +1,4 @@
-<?php include('../includes/api.php');?>
+<?php //include('../includes/api.php');?>
 
 <div class="row">
     <div class="col-xs-offset-1 col-xs-10">

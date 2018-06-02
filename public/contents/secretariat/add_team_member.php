@@ -1,4 +1,4 @@
-<?php include('../includes/api.php');?>
+<?php //include('../includes/api.php');?>
 <?php $team_id = $_GET['team_id']; ?>
 
 <div class="row">

@@ -47,6 +47,7 @@ class API {
 
   /* COMPLAINT */
   private static $COMPLAINT_LIST_URL = "public/get_users_list.php?user_type=complaint";
+  private static $COMPLAINT_LIST_DETAILED_URL = "public/get_users_list.php?user_type=generate_report";
   private static $COMPLAINANT_LIST_URL = "public/get_users_list.php?user_type=complainant";
 
   /* COMPLAINT_ACTION */
@@ -55,6 +56,10 @@ class API {
   /* COMPLAINT MEDIA */
   private static $COMPLAINT_MEDIA_LIST_URL = "public/get_users_list.php?user_type=complaint_media";
   private static $COMPLAINT_MEDIA_URL = "public/complaint_media/";
+
+  /* SYSTEM USER */
+  private static $SYSTEM_USER_LOGIN_URL = "public/log_user_in.php";
+
 
   //$url is the api url to post the data to
   //$data is the information to be sent to API
@@ -115,6 +120,10 @@ class API {
 
     //the path to exact file
     switch ($page) {
+      case 'generate_report':
+        $url .= self::$COMPLAINT_LIST_DETAILED_URL;
+      break;
+
       case 'delete_user':
         $url .= self::$USER_DELETE_URL;
         break;
@@ -259,6 +268,10 @@ class API {
 
       case 'get_media_file':
         $url .= self::$COMPLAINT_MEDIA_URL;
+        break;
+
+      case 'login_user_in':
+        $url .= self::$SYSTEM_USER_LOGIN_URL;
         break;
 
       default:

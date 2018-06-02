@@ -1,4 +1,4 @@
-<?php include '../includes/api.php';?>
+<?php //include '../includes/api.php';?>
 <div class="row">
     <div class='col-md-offset-9 col-md-3'>
         <!--a style="color:white" href="?page=reg_personnel" -->

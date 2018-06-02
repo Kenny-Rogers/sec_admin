@@ -1,5 +1,5 @@
 <?php 
-    include("../includes/api.php");
+    //include("../includes/api.php");
     $complaint_id = isset($_GET["complaint"]) ? $_GET["complaint"]:"";
     
     if($complaint_id == ""){

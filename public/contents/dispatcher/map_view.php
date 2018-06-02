@@ -1,5 +1,5 @@
 <?php 
-   include('../includes/api.php');
+  //include('../includes/api.php');
 ?>
 <div class="notif">
     <div id="data_returned" ></div>

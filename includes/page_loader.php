@@ -2,13 +2,51 @@
   include('functions.php');
   //loads the configurations of the system
 
-    //$user = 'dispatcher';
-    $user = 'sys_admin';
-    //$user = 'sec_rep';
-    
-    $page = isset($_GET['page'])? $_GET['page'] : "";
+    $page = "";
+    if(isset($_SESSION['uid']) && isset($_GET['page'])) {
+       $page = $_GET['page'];  
+       $uid = $_SESSION['uid'];
+      //things to specify for every case
+      $results = API::get_data(API::get_api_url('user_info1') . "&uid=$uid");
+      $user_response = array_shift($results);
+      $personnel = $user_response["personnel"];
+      $user = $user_response["system_user"];
+      $user_type = $user['role'];
+
+    } elseif ($_GET['page'] == "default") {
+       //$page = "default";
+       $uid = $_GET['uid'];
+       $_SESSION['uid'] = $uid;
+      //things to specify for every case
+      $results = API::get_data(API::get_api_url('user_info1') . "&uid=$uid");
+      $user_response = array_shift($results);
+      $personnel = $user_response["personnel"];
+      $user = $user_response["system_user"];
+      $user_type = trim($user['role']);
+      
+      if ($user_type == "secretariat representative") {
+          $page = "manage_patrol_team";
+      } elseif ($user_type == "dispatcher") {
+          $page = "map_view";
+      } elseif ($user_type == "admin") {
+         $page = "man_sec";
+      }
+
+    } else {
+      $page = "log_out"; 
+    }
 
     switch ($page){
+      case 'log_out':
+        session_destroy();
+        header('location:../index.php?status=logout');
+      break;
+  
+      case 'generate_report':
+        $title = "Generate Report";
+        $main_content = 'contents/general/generate_report.php';
+      break;
+
       /** Admin requests**/
        case 'create_sec':
         $title = "Create Secretariat";
@@ -115,8 +153,5 @@
         $main_content =  'contents/main_content/basic.php';
       break;
     }
-
-    //things to specify for every case
-
 
 ?>
